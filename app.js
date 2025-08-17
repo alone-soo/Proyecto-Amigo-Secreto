@@ -2,36 +2,36 @@
 // array para almacenar los nombres
 let listaDeAmigos = [];
 
-//funcion para agregar amigo
-function agregarAmigo(){
-    let nombreAmigo = document.getElementById('amigo').ariaValueMax.trim();
+// funcion para agregar un amigo
+function agregarAmigo() {
+    let nombreAmigo = document.getElementById('amigo').value.trim();
 
-    if (nombreAmigo === ""){
-        alert("Ingrese un nombre valido");
+    if (nombreAmigo === "") {
+        alert("Ingrese un nombre válido");
         return;
     }
 
     listaDeAmigos.push(nombreAmigo);
-    document.getElementById('amigo').value = " ";
+    document.getElementById('amigo').value = "";
     actualizarLista();
 }
 
-//funcion para actualizar lista
-function actualizarLista(){
+// funcion para actualizar lista
+function actualizarLista() {
     let ul = document.getElementById("listaAmigos");
     ul.innerHTML = "";
 
-    listaDeAmigos.forEach( amigo => {
+    listaDeAmigos.forEach(amigo => {
         let li = document.createElement("li");
         li.textContent = amigo;
-        ul.appendChild(1);
+        ul.appendChild(li);
     });
 }
 
-//funcion para sortear amigo
-function sortearAmigo(){
-    if (listaDeAmigos.length === 0){
-        alert("No hay amigos para sortear. Agregar al menos uno.");
+// funcion para sortear amigo
+function sortearAmigo() {
+    if (listaDeAmigos.length === 0) {
+        alert("No hay amigos para sortear. Agrega al menos uno.");
         return;
     }
 
